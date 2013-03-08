@@ -17,7 +17,7 @@ public class RobotTemplate extends SimpleRobot {
     
     public void robotInit(){
         vicky = new Victor(2);
-        vlad = new Victor(3);
+        vlad = new Victor(4);
         john = new Joystick(1);
         diego = new RobotDrive(vlad, vicky);
         button1 = false;
@@ -32,7 +32,7 @@ public class RobotTemplate extends SimpleRobot {
    
     public void operatorControl() {
         while(isEnabled()){
-            diego.arcadeDrive(john.getY(), john.getX());
+            diego.arcadeDrive(john.getX()/2, john.getY());
              if(butt.isNewPress(butt.lback)){
                 vlad.set(.5);
                 vicky.set(.5);
